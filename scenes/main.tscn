@@ -2,6 +2,13 @@
 
 [ext_resource type="Script" uid="uid://dtiwtyfrwknk3" path="res://scenes/stem.gd" id="1_sugp2"]
 
-[node name="Plant" type="Node2D"]
-position = Vector2(575, 632)
+[node name="Scene" type="Node2D"]
+position = Vector2(552, 416)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+scale = Vector2(3, 3)
+zoom = Vector2(0.5, 0.5)
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(34, 0)
 script = ExtResource("1_sugp2")
