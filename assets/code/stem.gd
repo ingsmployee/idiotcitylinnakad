@@ -4,7 +4,7 @@ var max_branches = 5
 var branch_sprites = [] 
 
 var branch_possibilities = [
-	"res://assets/plant/PROC_generic_stem_a.png"
+	"res://assets/textures/PROC_generic_stem_a.png"
 ]
 func animate():
 	var tween = get_tree().create_tween()

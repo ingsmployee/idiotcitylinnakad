@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bklnihgwcbn58"
-path="res://.godot/imported/PROC_generic_leaf_a.png-5051c1fff732cd687f32ca3ca8917ae8.ctex"
+uid="uid://d1e8o6dafqrma"
+path="res://.godot/imported/PROC_generic_leaf_c.png-73d25a3591f1d50dddbeab12046334e2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/plant/PROC_generic_leaf_a.png"
-dest_files=["res://.godot/imported/PROC_generic_leaf_a.png-5051c1fff732cd687f32ca3ca8917ae8.ctex"]
+source_file="res://assets/textures/PROC_generic_leaf_c.png"
+dest_files=["res://.godot/imported/PROC_generic_leaf_c.png-73d25a3591f1d50dddbeab12046334e2.ctex"]
 
 [params]
 
