@@ -11,7 +11,8 @@ config_version=5
 [application]
 
 config/name="idiotcitylinnakad"
-config/features=PackedStringArray("4.3", "GL Compatibility")
+run/main_scene="uid://dkj733n664y3w"
+config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [rendering]

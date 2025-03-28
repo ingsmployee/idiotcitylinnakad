@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dkj733n664y3w"]
+
+[ext_resource type="Script" uid="uid://dtiwtyfrwknk3" path="res://scenes/stem.gd" id="1_sugp2"]
+
+[node name="Plant" type="Node2D"]
+position = Vector2(575, 632)
+script = ExtResource("1_sugp2")
