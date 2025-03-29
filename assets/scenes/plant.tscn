@@ -52,4 +52,3 @@ libraries = {
 [node name="Sprites" type="Node2D" parent="."]
 
 [node name="Holder" type="Node2D" parent="Sprites"]
-position = Vector2(0, -95)

@@ -3,6 +3,8 @@ class_name PlantsBase
 
 static var stem_scene: PackedScene = preload("res://assets/scenes/stem.tscn")
 
+static var plant_scene: PackedScene = preload("res://assets/scenes/plant.tscn")
+
 static var stem_textures: Dictionary[StringName, Dictionary] = {
 	"generic": {
 		"end": preload("res://assets/textures/generic_stem_end.png"),
@@ -13,9 +15,8 @@ static var stem_textures: Dictionary[StringName, Dictionary] = {
 			preload("res://assets/textures/PROC_generic_leaf_a.png"),
 			preload("res://assets/textures/PROC_generic_leaf_b.png"),
 			preload("res://assets/textures/PROC_generic_leaf_c.png")
-			]
+		]
 	}
-	
 }
 
 
@@ -31,13 +32,18 @@ static var stem_textures: Dictionary[StringName, Dictionary] = {
 ## Chance that a split branch will decide to not grow. One branch is guaranteed to grow. NOT IMPLEMENTED
 @export var split_idle_chance = 0.5
 
-static func get_new_stem(plant_node: Node2D) -> Node2D:
+static func get_new_stem(plant_node: Plant) -> Stem:
 	var newborn = stem_scene.instantiate()
 	newborn.plant_node = plant_node
 	return newborn
 
-static func get_stem_texture(palette:StringName, id:StringName) -> CompressedTexture2D:
+static func get_stem_texture(palette:StringName, id:StringName) -> Texture2D:
 	var entry = stem_textures[palette][id]
 	if entry is Array:
 		return entry.pick_random()
 	return entry
+
+static func get_new_plant(palette: StringName = &"generic") -> Plant:
+	var newborn = plant_scene.instantiate()
+	newborn.palette = palette
+	return newborn

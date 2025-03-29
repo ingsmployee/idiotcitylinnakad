@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://c0ek2n37o3juw"]
 
 [ext_resource type="PhysicsMaterial" uid="uid://dklckv5qjdt7v" path="res://assets/misc/physics_materials/seeds_physics_material.tres" id="1_6dwpx"]
-[ext_resource type="Script" uid="uid://dyocxcw8kh75d" path="res://assets/code/tumble_object.gd" id="2_gl2g8"]
+[ext_resource type="Script" uid="uid://ded224lnmiviy" path="res://assets/code/seed.gd" id="2_6dwpx"]
 [ext_resource type="Texture2D" uid="uid://bklnihgwcbn58" path="res://assets/textures/PROC_generic_leaf_a.png" id="3_4bs6d"]
 
 [node name="Seed" type="RigidBody2D"]
@@ -9,7 +9,7 @@ input_pickable = true
 mass = 0.1
 physics_material_override = ExtResource("1_6dwpx")
 linear_damp = 10.0
-script = ExtResource("2_gl2g8")
+script = ExtResource("2_6dwpx")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("3_4bs6d")
