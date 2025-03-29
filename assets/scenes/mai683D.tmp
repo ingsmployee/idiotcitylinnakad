@@ -9,4 +9,4 @@ scale = Vector2(3, 3)
 zoom = Vector2(0.5, 0.5)
 
 [node name="Plant" parent="." instance=ExtResource("1_8g2kj")]
-position = Vector2(-142, 293)
+position = Vector2(-118, 605)

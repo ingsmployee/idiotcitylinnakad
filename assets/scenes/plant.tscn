@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://c1h8secxveuo5"]
 
-[ext_resource type="Script" path="res://assets/code/plant.gd" id="1_xpod4"]
+[ext_resource type="Script" uid="uid://bkibw48florvl" path="res://assets/code/plant.gd" id="1_xpod4"]
 
 [sub_resource type="Animation" id="Animation_3ukwn"]
 length = 0.001
@@ -37,8 +37,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vqubp"]
 _data = {
-"RESET": SubResource("Animation_3ukwn"),
-"swaying": SubResource("Animation_x870d")
+&"RESET": SubResource("Animation_3ukwn"),
+&"swaying": SubResource("Animation_x870d")
 }
 
 [node name="Plant" type="Node2D"]
@@ -46,7 +46,7 @@ script = ExtResource("1_xpod4")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_vqubp")
+&"": SubResource("AnimationLibrary_vqubp")
 }
 
 [node name="Sprites" type="Node2D" parent="."]

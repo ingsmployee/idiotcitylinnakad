@@ -1,12 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://bmxrqix8ekq6a"]
+[gd_scene load_steps=2 format=3 uid="uid://bmxrqix8ekq6a"]
 
-[ext_resource type="Texture2D" uid="uid://fyvvelm1glf2" path="res://assets/textures/PROC_generic_stem_a.png" id="1_4op0d"]
-[ext_resource type="Script" path="res://assets/code/stem.gd" id="1_fuuyr"]
+[ext_resource type="Script" uid="uid://158n1onmruok" path="res://assets/code/stem.gd" id="1_fuuyr"]
 
 [node name="Stem" type="Node2D"]
 script = ExtResource("1_fuuyr")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_4op0d")
+self_modulate = Color(1, 1, 1, 0.223529)
 
 [node name="NextStemAnchor" type="Marker2D" parent="."]
