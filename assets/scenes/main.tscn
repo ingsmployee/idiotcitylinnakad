@@ -1,32 +1,38 @@
-[gd_scene load_steps=4 format=3 uid="uid://dkj733n664y3w"]
+[gd_scene load_steps=7 format=3 uid="uid://dkj733n664y3w"]
 
 [ext_resource type="PhysicsMaterial" uid="uid://dklckv5qjdt7v" path="res://assets/misc/physics_materials/seeds_physics_material.tres" id="1_sfrgt"]
 [ext_resource type="Script" uid="uid://pr0otv4w0dc3" path="res://assets/code/seed_manager.gd" id="3_etxf0"]
+[ext_resource type="Script" uid="uid://danfukduqlnv6" path="res://assets/scenes/mixing_bowl.gd" id="3_sfrgt"]
+[ext_resource type="Texture2D" uid="uid://dtsxmxtg02y3j" path="res://assets/textures/programmer_art/Untitled_Artwork.png" id="4_etxf0"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_mr7gh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vesw4"]
+size = Vector2(165, 62)
 
 [node name="Node2D" type="Node2D"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="Walls" type="StaticBody2D" parent="."]
+unique_name_in_owner = true
 physics_material_override = ExtResource("1_sfrgt")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls"]
 position = Vector2(0, 324)
 shape = SubResource("WorldBoundaryShape2D_mr7gh")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls"]
 position = Vector2(0, -324)
 rotation = 3.14159
 shape = SubResource("WorldBoundaryShape2D_mr7gh")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Walls"]
 position = Vector2(-576, 0)
 rotation = 1.57079
 shape = SubResource("WorldBoundaryShape2D_mr7gh")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Walls"]
 position = Vector2(576, 0)
 rotation = 4.71238
 shape = SubResource("WorldBoundaryShape2D_mr7gh")
@@ -39,3 +45,24 @@ unique_name_in_owner = true
 
 [node name="Seeds" type="CanvasGroup" parent="."]
 script = ExtResource("3_etxf0")
+
+[node name="MixingBowl" type="RigidBody2D" parent="."]
+input_pickable = true
+script = ExtResource("3_sfrgt")
+
+[node name="Sprite2D" type="Sprite2D" parent="MixingBowl"]
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("4_etxf0")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MixingBowl"]
+scale = Vector2(0.7, 0.7)
+polygon = PackedVector2Array(-140, -48.5, -153, -44.5, -168.9, -45, -179, -30.7, -171, -5.2, -181.5, 1, -193, 12, -237, 47, -237, 52.1, -136, 120.1, -126, 110.9, -110.1, 96, -106, 84.8, -93.1, 71.8, -65, 81.6, -12, 90.7, 34.2, 88, 86.3, 73, 107.7, 59, 120, 46, 134.3, 17, 142.7, -17, 144, -27.1, 114.9, -30, 106.9, -22, 100, -2.7, 85, 17.9, 58, 35.9, 20, 46, -24, 47, -41.6, 47, -82.4, 35, -123.4, 9, -129.5, -14, -129, -38)
+
+[node name="Area2D" type="Area2D" parent="MixingBowl"]
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MixingBowl/Area2D"]
+position = Vector2(-7, -2)
+shape = SubResource("RectangleShape2D_vesw4")
+
+[connection signal="input_event" from="MixingBowl" to="MixingBowl" method="_on_input_event"]

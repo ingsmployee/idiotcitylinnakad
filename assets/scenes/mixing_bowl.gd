@@ -1,0 +1,2 @@
+extends TumbleObject
+class_name MixingBowl

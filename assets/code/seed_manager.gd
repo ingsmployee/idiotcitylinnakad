@@ -6,6 +6,7 @@ var seed_scene: PackedScene = preload("res://assets/scenes/seed.tscn")
 func create_seed(newborn_position: Vector2) -> RigidBody2D:
 	var newborn: Seed = seed_scene.instantiate()
 	newborn.plants_node = %Plants
+	newborn.walls = %Walls
 	add_child(newborn)
 	newborn.position = newborn_position
 	return newborn

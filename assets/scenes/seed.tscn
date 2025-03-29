@@ -8,6 +8,8 @@
 input_pickable = true
 mass = 0.1
 physics_material_override = ExtResource("1_6dwpx")
+contact_monitor = true
+max_contacts_reported = 5
 linear_damp = 10.0
 script = ExtResource("2_6dwpx")
 
