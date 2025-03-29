@@ -1,12 +1,44 @@
-[gd_scene load_steps=2 format=3 uid="uid://dkj733n664y3w"]
+[gd_scene load_steps=5 format=3 uid="uid://dkj733n664y3w"]
 
 [ext_resource type="PackedScene" uid="uid://c1h8secxveuo5" path="res://assets/scenes/plant.tscn" id="1_8g2kj"]
+[ext_resource type="PhysicsMaterial" uid="uid://dklckv5qjdt7v" path="res://assets/misc/physics_materials/seeds_physics_material.tres" id="1_sfrgt"]
+[ext_resource type="PackedScene" uid="uid://c0ek2n37o3juw" path="res://assets/scenes/seed.tscn" id="3_dfgan"]
 
-[node name="Scene" type="Node2D"]
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_mr7gh"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+physics_material_override = ExtResource("1_sfrgt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 324)
+shape = SubResource("WorldBoundaryShape2D_mr7gh")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -324)
+rotation = 3.14159
+shape = SubResource("WorldBoundaryShape2D_mr7gh")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-576, 0)
+rotation = 1.57079
+shape = SubResource("WorldBoundaryShape2D_mr7gh")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(576, 0)
+rotation = 4.71238
+shape = SubResource("WorldBoundaryShape2D_mr7gh")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 scale = Vector2(3, 3)
-zoom = Vector2(0.5, 0.5)
 
-[node name="Plant" parent="." instance=ExtResource("1_8g2kj")]
+[node name="Plants" type="CanvasGroup" parent="."]
+
+[node name="Plant" parent="Plants" instance=ExtResource("1_8g2kj")]
 position = Vector2(-142, 293)
+scale = Vector2(0.5, 0.5)
+
+[node name="Seed" parent="." instance=ExtResource("3_dfgan")]

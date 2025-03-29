@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://c0ek2n37o3juw"]
+
+[ext_resource type="PhysicsMaterial" uid="uid://dklckv5qjdt7v" path="res://assets/misc/physics_materials/seeds_physics_material.tres" id="1_6dwpx"]
+[ext_resource type="Script" uid="uid://dyocxcw8kh75d" path="res://assets/code/tumble_object.gd" id="2_gl2g8"]
+[ext_resource type="Texture2D" uid="uid://bklnihgwcbn58" path="res://assets/textures/PROC_generic_leaf_a.png" id="3_4bs6d"]
+
+[node name="Seed" type="RigidBody2D"]
+input_pickable = true
+mass = 0.1
+physics_material_override = ExtResource("1_6dwpx")
+linear_damp = 10.0
+script = ExtResource("2_gl2g8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_4bs6d")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-14, -52, -23.1, -36.5, -30, -20.7, -30, 20.1, -25, 30.8, -5.9, 53.5, 11, 47.1, 23.9, 31.5, 30, 21.1, 30, -4.8, 11.1, -27.5, -3, -51)
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

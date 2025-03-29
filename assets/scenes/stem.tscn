@@ -1,11 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://bmxrqix8ekq6a"]
+[gd_scene load_steps=3 format=3 uid="uid://bmxrqix8ekq6a"]
 
 [ext_resource type="Script" uid="uid://158n1onmruok" path="res://assets/code/stem.gd" id="1_fuuyr"]
+[ext_resource type="Texture2D" uid="uid://bhb55326uhyt6" path="res://assets/textures/generic_stem_medium.png" id="2_e77rr"]
 
 [node name="Stem" type="Node2D"]
+z_index = -1
+scale = Vector2(1, 0.1)
 script = ExtResource("1_fuuyr")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-self_modulate = Color(1, 1, 1, 0.223529)
+texture = ExtResource("2_e77rr")
 
 [node name="NextStemAnchor" type="Marker2D" parent="."]
