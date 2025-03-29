@@ -74,8 +74,8 @@ func create_split_stems(palette: StringName = &"generic") -> Array[Node2D]:
 	# biasing it to grow upwards
 	var newborn_1 = PlantsBase.get_new_stem(plant_node)
 	var newborn_2 = PlantsBase.get_new_stem(plant_node)
-	var bias = pow(rotation_degrees / 360, 2) * 180
-	var split_angle = clamp(round(random.randfn(bias, 7)), bias - 6, bias + 6)
+	var bias = pow(rotation_degrees / 360, 1.1) * 360
+	var split_angle = clamp(round(random.randfn(0, 7)),-6, 6)
 	if split_angle > 0:
 		split_angle = max(3, split_angle)
 	else:
@@ -90,7 +90,7 @@ func create_split_stems(palette: StringName = &"generic") -> Array[Node2D]:
 
 func create_stem(palette: StringName = &"generic") -> Node2D: 
 	var newborn = PlantsBase.get_new_stem(plant_node)
-	var bias = -pow(rotation_degrees / 360, 3) * 180
+	var bias = -pow(rotation_degrees / 360, 1.1) * 360
 	newborn.rotate(deg_to_rad(2 * clamp(random.randfn(bias, 7), bias - 10, bias + 10)))
 	$NextStemAnchor.add_child(newborn)
 	newborn.global_position = $NextStemAnchor.global_position
